@@ -1,0 +1,37 @@
+{% extends "extra.html" %}
+
+{% block content %}
+
+<div class="column is-4 is-offset-4">
+    <h3 class="title">OTP</h3>
+    <div class="box">
+        {% if message %}
+            <div class="notification is-danger">
+                {{ message }} 
+            </div>
+        {% endif %}
+       
+    
+        <form method="POST" method="POST" action="/verify">
+            <div class="field">
+                <div class="control" data-validate = "OTP is required">
+                    <input class="input is-large" type="text" name="otp" placeholder="6-digit code" autofocus="">
+                </div>
+            </div>
+            
+            <button class="button is-block is-info is-large is-fullwidth">Submit</button>
+
+            <div class="">
+                <a href="{{url_for('resend')}}"class=" is-info is-large  is-fullwidth">  
+                resend
+                </a>
+            </div>
+        </form>
+
+    </div>
+
+
+{% endblock %}
+
+
+   

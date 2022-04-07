@@ -1,0 +1,10 @@
+{% extends "extra.html" %}
+
+{% block content %}
+<div>
+  <a href="{{url_for('customer_logout')}}" class="nav-link"> Logout</a>
+</div>
+<h1 class="title">
+  Welcome, {{ name }}!
+</h1>
+{% endblock %}
